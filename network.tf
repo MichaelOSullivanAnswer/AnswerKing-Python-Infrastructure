@@ -28,3 +28,7 @@ resource "aws_subnet" "private_subnet_2" {
   cidr_block = "10.0.201.0/24"
   availability_zone = "eu-west-2b"
 }
+
+resource "aws_internet_gateway" "internet_gateway" {
+  vpc_id = aws_vpc.vpc.id
+}
