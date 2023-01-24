@@ -34,7 +34,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     {
       name      = "${var.project_name}-container"
       image     = "${var.aws_account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${aws_ecr_repository.worker.name}:latest"
-      cpu       = var.ecs_task_memory
+      cpu       = 2
       essential = true
       networkMode = var.network_mode
       portMappings = [
